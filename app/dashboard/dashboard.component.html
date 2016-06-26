@@ -1,0 +1,245 @@
+ <!-- template -->
+
+ <!-- /#wrapper -->
+ <div class="wrapper">
+
+   <!-- Main Header -->
+   <header class="main-header">
+
+     <!-- Logo -->
+     <a  class="logo">
+       <!-- mini logo for sidebar mini 50x50 pixels -->
+       <span class="logo-mini"><b>A2</b>DS</span>
+       <!-- logo for regular state and mobile devices -->
+       <span class="logo-lg"><b>{{Author}}</b>{{Title}}</span>
+     </a>
+
+     <!-- Header Navbar -->
+     <nav class="navbar navbar-static-top" role="navigation">
+       <!-- Sidebar toggle button-->
+       <a class="sidebar-toggle" data-toggle="offcanvas" role="button">
+         <span class="sr-only">Toggle navigation</span>
+       </a>
+       <!-- Navbar Right Menu -->
+       <div class="navbar-custom-menu">
+         <ul class="nav navbar-nav">
+
+           <!-- Notifications Menu -->
+           <li class="dropdown notifications-menu">
+             <!-- Menu toggle button -->
+             <a  class="dropdown-toggle" data-toggle="dropdown">
+               <i class="fa fa-bell-o"></i>
+               <span class="label label-warning">10</span>
+             </a>
+             <ul class="dropdown-menu">
+               <li class="header">You have 10 notifications</li>
+               <li>
+                 <!-- Inner Menu: contains the notifications -->
+                 <ul class="menu">
+                   <li><!-- start notification -->
+                     <a >
+                       <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                     </a>
+                   </li>
+                   <!-- end notification -->
+                 </ul>
+               </li>
+               <li class="footer"><a >View all</a></li>
+             </ul>
+           </li>
+           <!-- User Account Menu -->
+           <li class="dropdown user user-menu">
+             <!-- Menu Toggle Button -->
+             <a  class="dropdown-toggle" data-toggle="dropdown">
+               <!-- The user image in the navbar-->
+               <img src="images/nidhal.jpg" class="user-image" alt="User Image">
+               <!-- hidden-xs hides the username on small devices so only the image appears. -->
+               <span class="hidden-xs"></span>
+             </a>
+             <ul class="dropdown-menu">
+               <!-- The user image in the menu -->
+               <li class="user-header">
+                 <img src="images/nidhal.jpg" class="img-circle" alt="User Image">
+
+                 <p>
+           
+                   <small>Member since June. 2016</small>
+                 </p>
+               </li>
+               <!-- Menu Footer-->
+               <li class="user-footer">
+                 <div class="pull-left">
+                   <a  class="btn btn-default btn-flat">Profile</a>
+                 </div>
+                 <div class="pull-right">
+                   <a  (click)='logout()' class="btn btn-default btn-flat">Sign out</a>
+                 </div>
+               </li>
+             </ul>
+           </li>
+         </ul>
+       </div>
+     </nav>
+   </header>
+   <!-- Left side column. contains the logo and sidebar -->
+   <aside class="main-sidebar">
+
+     <!-- sidebar: style can be found in sidebar.less -->
+     <section class="sidebar">
+
+       <!-- Sidebar user panel (optional) -->
+       <div class="user-panel">
+         <div class="pull-left image">
+           <img src="images/nidhal.jpg" class="img-circle" alt="User Image">
+         </div>
+         <div class="pull-left info">
+           <p> {{Username}} </p>
+           <!-- Status -->
+           <a><i class="fa fa-circle text-success"></i> Online</a>
+         </div>
+       </div>
+
+       <!-- search form (Optional) -->
+       <form  method="get" class="sidebar-form">
+         <div class="input-group">
+           <input type="text" name="q" class="form-control" placeholder="Search...">
+               <span class="input-group-btn">
+                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                 </button>
+               </span>
+         </div>
+       </form>
+       <!-- /.search form -->
+
+       <!-- Sidebar Menu -->
+       <ul class="sidebar-menu">
+         <li class="header">MAIN NAVIGATION</li>
+         <!-- Optionally, you can add icons to the links -->
+         <li   (click)="setActive('Dashboard')" class="{{getActive('Dashboard')}}" [routerLink]="['Dashboard']"  ><a >    <i class="fa fa-pie-chart"></i> <span>Data Presentation</span></a></li>
+      <li  class (click)="setActive('Blank')" class="{{getActive('Blank')}}" [routerLink]="['Blank']"><a >    <i class=""></i> <span>Blank Page</span></a></li>
+        <!-- <li > <a><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+         <li class="treeview">
+           <a><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+           <ul class="treeview-menu">
+             <li><a >Link in level 2</a></li>
+             <li><a >Link in level 2</a></li>
+           </ul>
+         </li>
+         -->
+       </ul>
+       <!-- /.sidebar-menu -->
+     </section>
+     <!-- /.sidebar -->
+   </aside>
+
+   <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper">
+     <!-- Content Header (Page header) -->
+     <section class="content-header">
+       <h1>
+         <small *ngIf="pageSubtitle">pageSubtitle</small>
+       </h1>
+     </section>
+
+     <!-- Main content -->
+     <section class="content">
+         <div class="row">
+        <div class="col-md-6">
+       <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Doughnut Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body chart-responsive">
+              
+                 <doughnut-chart></doughnut-chart>
+            </div>
+            <!-- /.box-body -->
+          </div>
+       <!-- Your Page Content Here -->
+            <!-- DONUT CHART -->
+          <div class="box box-danger">
+            <div class="box-header with-border">
+              <h3 class="box-title">Pie Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body chart-responsive">
+        <pie-chart></pie-chart>
+            <!--  <div class="chart" id="sales-chart" style="height: 300px; position: relative;"></div>--->
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+         <div class="col-md-6">
+               <!-- LINE CHART -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Polar Area Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body chart-responsive">
+             <polar-area-chart></polar-area-chart>
+           
+            </div>
+            <!-- /.box-body -->
+          </div>
+              <!-- BAR CHART -->
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Line Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body chart-responsive">
+                 <first></first>
+ 
+        <!--     <div class="chart" id="bar-chart" style="height: 300px;"></div>-->
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+         </div>
+         </div>
+        <ng-content></ng-content>
+
+     </section>
+     <!-- /.content -->
+   </div>
+   <!-- /.content-wrapper -->
+
+   <!-- Main Footer -->
+   <footer class="main-footer">
+     <!-- To the right -->
+     <div class="pull-right hidden-xs">
+       Rock N Roll
+     </div>
+     <!-- Default to the left -->
+     <strong>Copyright &copy; 2016 <a >Company</a>.</strong> All rights reserved to Nidhal.
+   </footer>
+
+
+ </div>
+ <!-- ./wrapper -->
+
+
